@@ -1,0 +1,13 @@
+@model IEnumerable<FinalProject.Models.Guitarist>
+
+<h2>My Favorite Guitarists</h2>
+
+<ul>
+    @foreach (var guitarist in Model)
+    {
+        <li>
+            <h3>@guitarist.Name</h3>
+            <img src="@guitarist.ImageUrl" alt="Photo of @guitarist.Name" style="width:55%; height:auto;">
+        </li>
+    }
+</ul>

@@ -1,0 +1,26 @@
+@model IEnumerable<Equipment>
+
+<h2>Guitar Equipment</h2>
+<a asp-action="Create" class="btn btn-primary">Add New Equipment</a>
+
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <th>Brand</th>
+        <th>Description</th>
+        <th>Price</th>
+    </tr>
+    @foreach (var equipment in Model)
+    {
+        <tr>
+            <td>@equipment.Name</td>
+            <td>@equipment.Brand</td>
+            <td>@equipment.Description</td>
+            <td>@equipment.Price</td>
+            <td>
+                <a asp-action="Edit" class="btn btn-primary" asp-route-id="@equipment.EquipmentId">Edit</a> |
+                <a asp-action="Delete" class="btn btn-primary" asp-route-id="@equipment.EquipmentId">Delete</a>
+            </td>
+        </tr>
+    }
+</table>
